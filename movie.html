@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2374c6">
+  <meta name="description" content="CareerGhana Cinepantry — Movie and Recipe Finder">
+  <title>CareerGhana Movie/Recipe Finder</title>
+  <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+  <main class="app" id="top">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="CareerGhana Cinepantry home">
+        <img src="Careerghana.jpg" alt="CareerGhana logo" class="brand-logo">
+        <span class="brand-name">CareerGhana <p> Your Journey To Success</p></span>
+      </a>
+      <nav class="main-nav">
+        <a href="#discover">Discover</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="saved-button" id="savedButton" type="button">
+        ♡ Saved <span id="savedCount">0</span>
+      </button>
+    </header>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CareerGhana presents</p>
+        <h1>Find something<br>
+          <em>worth savoring.</em>
+        </h1>
+        <p class="hero-text">
+          Search Movies for your watchlist or Recipes for your dinner table, all in one place.
+        </p>
+      </div>
+      <div class="orbit" aria-hidden="true">
+        <div class="orbit-center">
+          CG
+        </div>
+      </div>
+    </section>
+    <section class="search-panel" id="discover">
+      <div class="mode-switch" role="tablist">
+        <button
+          class="mode active"
+          data-mode="movies"
+          role="tab"
+          aria-selected="true"
+          type="button">
+          ▣ Movies
+        </button>
+        <button
+          class="mode"
+          data-mode="recipes"
+          role="tab"
+          aria-selected="false"
+          type="button">
+          ✦ Recipes
+        </button>
+      </div>
+      <div class="search-row">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search by title, actor, or genre..."
+            autocomplete="off"
+            aria-label="Search movies or recipes">
+          <button
+            id="clearButton"
+            class="clear"
+            type="button"
+            aria-label="Clear search">
+            ×
+          </button>
+        </label>
+        <button
+          id="searchButton"
+          class="search-button"
+          type="button">
+          Search
+        </button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Filter by:</span>
+        <div id="filters"></div>
+      </div>
+      <p class="notice" id="notice"></p>
+    </section>
+    <section class="results-section" aria-live="polite">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow" id="sectionEyebrow">
+            Created for you
+          </p>
+          <h2 id="resultsTitle">
+            Popular right now
+          </h2>
+        </div>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="card-grid" id="resultsGrid"></div>
+    </section>
+    <section class="saved-section" id="savedSection" hidden>
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">Your collection</p>
+          <h2>Saved picks</h2>
+        </div>
+        <button
+          class="close-saved"
+          id="closeSaved"
+          type="button">
+          Back to discover
+        </button>
+      </div>
+      <div class="card-grid" id="savedGrid"></div>
+    </section>
+    <footer id="about">
+      <div class="footer-brand">
+        <img
+          src="Careerghana.jpg"
+          alt="CareerGhana"
+          class="footer-logo">
+        <span>Made By: CareerGhana.</span>
+      </div>
+      <span class="footer-note">
+        Movie Data: OMDb <br> Recipe Data: TheMealDB
+      </span>
+
+    </footer>
+
+  </main>
+
+  <div class="modal" id="detailsModal" aria-hidden="true">
+
+    <div
+      class="modal-backdrop"
+      data-close-modal
+    ></div>
+
+    <article
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        type="button"
+        aria-label="Close details"
+      >
+        ×
+      </button>
+
+      <div id="modalContent"></div>
+
+    </article>
+  </div>
+
+  <script src="movie.js"></script>
+</body>
+</html>
